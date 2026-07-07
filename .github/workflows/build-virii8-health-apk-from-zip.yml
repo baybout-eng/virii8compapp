@@ -7,7 +7,7 @@ on:
       - main
       - master
     paths:
-      - 'virii8-health-companion-android-v0.1.1-responsive-help-source.zip'
+      - 'virii8-companion-android-v0.9.0-private-testing-candidate-source.zip'
       - '.github/workflows/build-virii8-health-apk-from-zip.yml'
 
 jobs:
@@ -22,14 +22,14 @@ jobs:
 
       - name: Confirm source ZIP exists
         run: |
-          test -f virii8-health-companion-android-v0.1.1-responsive-help-source.zip
-          ls -lh virii8-health-companion-android-v0.1.1-responsive-help-source.zip
+          test -f virii8-companion-android-v0.9.0-private-testing-candidate-source.zip
+          ls -lh virii8-companion-android-v0.9.0-private-testing-candidate-source.zip
 
       - name: Extract Android project
         run: |
           rm -rf build-src
           mkdir -p build-src
-          unzip -q virii8-health-companion-android-v0.1.1-responsive-help-source.zip -d build-src
+          unzip -q virii8-companion-android-v0.9.0-private-testing-candidate-source.zip -d build-src
           find build-src -maxdepth 3 -type f | sort | sed -n '1,160p'
 
       - name: Locate project root
